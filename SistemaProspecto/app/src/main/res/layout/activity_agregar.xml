@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <TextView
+        android:id="@+id/AuxRegistro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Registrar"
+        android:textSize="30dp"
+        android:textStyle="bold"
+
+        />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/AuxRegistro"
+        />
+
+    <!-- Nombre del prospecto -->
+
+    <EditText
+        android:id="@+id/txtAgregarNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLength="45"
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal = "true"
+        android:layout_centerVertical = "true"
+        android:ems="5"
+        android:singleLine="true"
+        android:hint="Nombre"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/txtAgregarPrimer"
+        app:layout_constraintTop_toBottomOf="@id/AuxRegistro"
+        android:background="@drawable/style_borde"/>
+
+    <!-- primer apellido del prospecto -->
+
+    <EditText
+        android:id="@+id/txtAgregarPrimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLength="45"
+        android:layout_centerHorizontal = "true"
+        android:layout_centerVertical = "true"
+        android:ems="6"
+        android:layout_marginTop="5dp"
+        android:hint="Primer apellido"
+        android:singleLine="true"
+        app:layout_constraintStart_toEndOf="@id/txtAgregarNombre"
+        app:layout_constraintEnd_toStartOf="@id/txtAgregarSegundo"
+        app:layout_constraintTop_toBottomOf="@id/AuxRegistro"
+        android:background="@drawable/style_borde"/>
+
+    <!-- Segundo apellido del prospecto -->
+
+    <EditText
+        android:id="@+id/txtAgregarSegundo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLength="45"
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal = "true"
+        android:layout_centerVertical = "true"
+        android:ems="7"
+        android:singleLine="true"
+        android:hint="Segundo apellido"
+        app:layout_constraintStart_toEndOf="@+id/txtAgregarPrimer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/AuxRegistro"
+        android:background="@drawable/style_borde"/>
+
+    <!-- telefono del prospecto -->
+
+    <EditText
+        android:id="@+id/txtAgregarTelefono"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLength="10"
+        android:inputType="number"
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal = "true"
+        android:layout_centerVertical = "true"
+        android:ems="6"
+        android:hint="Telefono"
+        android:singleLine="true"
+        android:background="@drawable/style_borde"
+        app:layout_constraintTop_toBottomOf="@id/txtAgregarNombre"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/txtAgregarRFC"/>
+
+    <!-- RFC del prospecto -->
+
+    <EditText
+        android:id="@+id/txtAgregarRFC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLength="45"
+        android:layout_centerHorizontal = "true"
+        android:layout_centerVertical = "true"
+        android:ems="8"
+        android:hint="RFC"
+        android:singleLine="true"
+        android:background="@drawable/style_borde"
+        app:layout_constraintTop_toTopOf="@id/txtAgregarTelefono"
+        app:layout_constraintStart_toEndOf="@id/txtAgregarTelefono"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Aux Domicilio -->
+
+    <TextView
+        android:id="@+id/AuxDomicilio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/txtAgregarTelefono"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Domicilio"
+        android:textSize="30dp"
+        android:textStyle="bold"
+
+        />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/AuxDomicilio"
+        />
+
+    <!-- Calle del prospecto -->
+
+    <EditText
+        android:id="@+id/txtAgregarCalle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLength="50"
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal = "true"
+        android:layout_centerVertical = "true"
+        android:ems="10"
+        android:hint="Calle"
+        android:singleLine="true"
+        app:layout_constraintTop_toBottomOf="@id/AuxDomicilio"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/style_borde"
+        app:layout_constraintEnd_toStartOf="@id/txtAgregarNumero"/>
+
+    <!-- numero de casa del prospecto -->
+
+    <EditText
+        android:id="@+id/txtAgregarNumero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLength="5"
+        android:inputType="number"
+        android:layout_centerHorizontal = "true"
+        android:layout_centerVertical = "true"
+        android:ems="6"
+        android:hint="Numero"
+        android:singleLine="true"
+        android:background="@drawable/style_borde"
+        app:layout_constraintStart_toEndOf="@+id/txtAgregarCalle"
+        app:layout_constraintTop_toBottomOf="@id/AuxDomicilio"
+        app:layout_constraintTop_toTopOf="@+id/txtAgregarCalle"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <!-- Colonia del prospecto -->
+
+    <EditText
+        android:id="@+id/txtAgregarColonia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLength="20"
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal = "true"
+        android:layout_centerVertical = "true"
+        android:ems="10"
+        android:hint="Colonia"
+        android:singleLine="true"
+        android:background="@drawable/style_borde"
+        app:layout_constraintTop_toBottomOf="@id/txtAgregarCalle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/txtAgregarCPostal"/>
+
+    <!-- Codigo postal del prospecto -->
+
+
+
+    <EditText
+        android:id="@+id/txtAgregarCPostal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLength="6"
+        android:inputType="number"
+        android:layout_centerHorizontal = "true"
+        android:layout_centerVertical = "true"
+        android:ems="6"
+        android:hint="Codigo postal"
+        android:singleLine="true"
+        android:background="@drawable/style_borde"
+        app:layout_constraintStart_toEndOf="@id/txtAgregarColonia"
+        app:layout_constraintTop_toTopOf="@id/txtAgregarColonia"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Boton -->
+
+    <Button
+        android:id="@+id/BtnAgregarGuardar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#3F51B5"
+        android:visibility="invisible"
+        android:text="Guardar"
+        app:layout_constraintBottom_toTopOf="@+id/BtnAgregarSalir" />
+
+    <Button
+        android:id="@+id/BtnAgregarSalir"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Salir"
+        android:backgroundTint="#686868"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="mViewModel"
+            type="com.example.sistemaprospecto.ProspectoViewModel" />
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetalleActivity">
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="1dp"
+        android:layout_height="wrap_content"
+        android:background="#655A5A"
+        app:layout_constraintStart_toEndOf="@id/BtnInfoPer"
+        app:layout_constraintTop_toBottomOf="@id/divEstatus"
+        />
+
+    <TextView
+        android:id="@+id/txtDetalleEstatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:text="@{mViewModel.prospecto.estatus}"
+        tools:text="Estatus"/>
+
+    <View
+        android:id="@+id/divEstatus"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#950A0A"
+        app:layout_constraintTop_toBottomOf="@id/txtDetalleEstatus"
+        />
+
+    <Button
+        android:id="@+id/BtnInfoPer"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:text="Informacion personal"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDetalleEstatus"
+        android:backgroundTint="@color/white"
+        />
+
+    <Button
+        android:id="@+id/BtnDomicilio"
+        android:layout_height="wrap_content"
+        android:layout_width="160dp"
+        android:text="Domicilio"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/BtnInfoPer"
+        app:layout_constraintTop_toBottomOf="@id/BtnInfoPer"
+        android:backgroundTint="@color/white"
+        />
+
+    <Button
+        android:id="@+id/BtnObservaciones"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:text="Observaciones"
+        android:textColor="@color/black"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@id/BtnDomicilio"
+        app:layout_constraintTop_toBottomOf="@id/BtnDomicilio"
+        android:backgroundTint="@color/white"
+        />
+
+    <!-- Nombre -->
+
+    <TextView
+        android:id="@+id/AuxNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre: "
+        android:layout_marginStart="5dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@id/divider2"
+        app:layout_constraintTop_toTopOf="@+id/txtDetalleNombre"
+        />
+
+    <TextView
+        android:id="@+id/txtDetalleNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@+id/divEstatus"
+        app:layout_constraintStart_toEndOf="@+id/AuxNombre"
+        android:textAlignment="center"
+        android:inputType="textMultiLine"
+        android:ems="11"
+        android:text="@{mViewModel.prospecto.nombre + ' ' + mViewModel.prospecto.primerapellido + ' '+mViewModel.prospecto.segundoapellido }"
+        tools:text="Nombre"/>
+
+    <!-- Telefono -->
+
+    <TextView
+        android:id="@+id/AuxTelefono"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Telefono: "
+        android:layout_marginStart="5dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@id/divider2"
+        app:layout_constraintTop_toBottomOf="@id/txtDetalleNombre"
+        />
+
+    <TextView
+        android:id="@+id/txtDetalleTelefono"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintTop_toTopOf="@id/AuxTelefono"
+        app:layout_constraintStart_toEndOf="@id/AuxTelefono"
+        android:textAlignment="center"
+        android:text="@{mViewModel.prospecto.telefono}"
+        tools:text="Telefono"/>
+
+    <!-- RFC -->
+
+    <TextView
+        android:id="@+id/AuxRFC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calle: "
+        android:layout_marginStart="5dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@id/divider2"
+        app:layout_constraintTop_toBottomOf="@id/AuxTelefono"
+        />
+
+    <TextView
+        android:id="@+id/txtDetalleRFC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintTop_toTopOf="@id/AuxRFC"
+        app:layout_constraintStart_toEndOf="@id/AuxRFC"
+        android:textAlignment="center"
+        android:text="@{mViewModel.prospecto.rfc}"
+        tools:text="RFC"/>
+
+
+    <!-- Colonia -->
+
+    <TextView
+        android:id="@+id/AuxColonia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Colonia: "
+        android:layout_marginStart="5dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@id/divider2"
+        app:layout_constraintTop_toTopOf="@+id/txtDetalleNombre"
+        />
+
+    <TextView
+        android:id="@+id/txtDetalleColonia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="@{mViewModel.prospecto.colonia}"
+        tools:text="Colonia"
+        android:visibility="invisible"
+        app:layout_constraintTop_toTopOf="@id/AuxColonia"
+        app:layout_constraintStart_toEndOf="@+id/AuxColonia" />
+
+    <!-- Calle -->
+    <TextView
+        android:id="@+id/AuxCalle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calle: "
+        android:layout_marginStart="5dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@id/divider2"
+        app:layout_constraintTop_toBottomOf="@id/AuxColonia"
+        />
+
+    <TextView
+        android:id="@+id/txtDetalleCalle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/AuxCalle"
+        app:layout_constraintStart_toEndOf="@id/AuxCalle"
+        android:visibility="invisible"
+        android:textAlignment="center"
+        android:inputType="textMultiLine"
+        android:ems="11"
+        android:text="@{mViewModel.prospecto.calle}"
+        tools:text="Calle"/>
+
+    <!-- Numero de casa -->
+
+    <TextView
+        android:id="@+id/AuxNumero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Numero de casa: "
+        android:layout_marginStart="5dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@id/divider2"
+        app:layout_constraintTop_toBottomOf="@id/AuxCalle"
+        />
+
+    <TextView
+        android:id="@+id/txtDetalleNumero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/AuxNumero"
+        app:layout_constraintTop_toTopOf="@id/AuxNumero"
+        android:textAlignment="center"
+        android:visibility="invisible"
+        android:text="@{mViewModel.prospecto.numero}"
+        tools:text="Numero de casa"/>
+
+    <!-- Codigo postal -->
+
+    <TextView
+        android:id="@+id/AuxCP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Codigo postal: "
+        android:layout_marginStart="5dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@id/divider2"
+        app:layout_constraintTop_toBottomOf="@id/AuxNumero"
+        />
+
+    <TextView
+        android:id="@+id/txtDetalleCodigo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@id/AuxCP"
+        app:layout_constraintTop_toTopOf="@id/AuxCP"
+        android:textAlignment="center"
+        android:text="@{mViewModel.prospecto.codigopostal}"
+        tools:text="Codigo postal"/>
+
+    <!-- Observaciones -->
+
+    <TextView
+        android:id="@+id/AuxObservaciones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Observaciones: "
+        android:layout_marginStart="5dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@id/divider2"
+        app:layout_constraintTop_toTopOf="@+id/txtDetalleNombre"
+        />
+
+    <TextView
+        android:id="@+id/txtDetalleObservaciones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@id/divider2"
+        app:layout_constraintTop_toBottomOf="@id/AuxObservaciones"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:inputType="textMultiLine"
+        android:ems="15"
+        android:textAlignment="center"
+        android:text="@{mViewModel.prospecto.observaciones}"
+        tools:text="Observaciones"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
